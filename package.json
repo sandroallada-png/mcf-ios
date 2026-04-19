@@ -1,0 +1,26 @@
+{
+  "name": "mcf-ios",
+  "version": "1.0.0",
+  "description": "My Cook Flex — Projet iOS autonome (Xcode + Capacitor)",
+  "private": true,
+  "scripts": {
+    "open":    "npx cap open ios",
+    "sync":    "npx cap sync ios",
+    "postinstall": "echo '✓ MCF iOS prêt. Lancez : npm run open'"
+  },
+  "dependencies": {
+    "@capacitor/cli":              "^8.1.0",
+    "@capacitor/core":             "^8.1.0",
+    "@capacitor/ios":              "^8.1.0",
+    "@capacitor/app":              "^8.1.0",
+    "@capacitor/camera":           "^8.1.0",
+    "@capacitor/push-notifications": "^8.0.3",
+    "@capacitor-firebase/authentication": "^8.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

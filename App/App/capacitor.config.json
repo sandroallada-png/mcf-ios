@@ -1,28 +1,29 @@
 {
 	"appId": "my.cook.flex",
 	"appName": "My Cook Flex",
-	"webDir": "dist",
-	"server": {
-		"androidScheme": "https",
-		"cleartext": true
-	},
-	"android": {},
+	"webDir": "public",
 	"plugins": {
 		"SplashScreen": {
-			"launchShowDuration": 0,
+			"launchShowDuration": 2000,
 			"launchAutoHide": true,
 			"backgroundColor": "#0a0a0a",
-			"showSpinner": false
+			"showSpinner": true,
+			"iosSpinnerStyle": "small",
+			"spinnerColor": "#f97316"
+		},
+		"Keyboard": {
+			"resize": "body",
+			"style": "dark",
+			"resizeOnFullScreen": true
 		},
 		"FirebaseAuthentication": {
 			"skipNativeAuth": false,
 			"providers": [
 				"google.com"
 			]
+		},
+		"PushNotifications": {
+			"presentationOptions": ["badge", "sound", "alert"]
 		}
-	},
-	"packageClassList": [
-		"FirebaseAuthenticationPlugin",
-		"AppPlugin"
-	]
+	}
 }

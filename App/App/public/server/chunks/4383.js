@@ -1,0 +1,1 @@
+"use strict";exports.id=4383,exports.ids=[4383],exports.modules={4383:(e,p,t)=>{t.d(p,{App:()=>s});let s=(0,t(98401).F3)("App",{web:()=>t.e(2553).then(t.bind(t,62553)).then(e=>new e.AppWeb)})}};
