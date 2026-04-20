@@ -18,8 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        // Initialisation de Firebase (doit être fait avant tout le reste)
-        FirebaseApp.configure()
+        // Diagnostic Firebase
+        let plistPath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
+        print("[Firebase] Recherche du fichier plist : \(plistPath ?? "INTROUVABLE")")
+        print("[Firebase] Bundle ID actuel de l'app : \(Bundle.main.bundleIdentifier ?? "INCONNU")")
+
+        if plistPath != nil {
+            FirebaseApp.configure()
+            print("[Firebase] Initialisation configurée.")
+        } else {
+            print("[Firebase] ERREUR CRITIQUE : Le fichier GoogleService-Info.plist est introuvable dans le bundle final.")
+        }
 
         // Demande d'autorisation pour les notifications push
         UNUserNotificationCenter.current().delegate = self
