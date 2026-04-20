@@ -5,7 +5,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'my.cook.flex',
   appName: 'My Cook Flex',
-  webDir: 'out',          // ← pointe vers le dossier d'export statique
+  webDir: 'App/App/public',  // ← Correction du chemin pour le Mac
   // PAS de server.url → WebView charge les fichiers locaux (out/)
   // Mais on autorise la communication avec la PWA
   server: {
