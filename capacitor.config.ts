@@ -1,43 +1,38 @@
 import { CapacitorConfig } from '@capacitor/cli';
-
-// ─────────────────────────────────────────────────────────────────────────────
-// MCF iOS — capacitor.config.ts (racine du dépôt mcf-ios)
-// Ce fichier sert à `npx cap sync ios` pour savoir où synchroniser.
-// ─────────────────────────────────────────────────────────────────────────────
+// MCF iOS LOCAL BUILD — généré par scripts/prepare-ios.js
+// NE PAS COMMITER CE FICHIER tel quel (il est temporaire)
 
 const config: CapacitorConfig = {
   appId: 'my.cook.flex',
   appName: 'My Cook Flex',
-
-  // Pointe vers le dossier contenant le build web statique
-  // (copié ici depuis le projet principal lors de la sync)
-  webDir: 'App/App/public',
-
-  ios: {
-    // Chemin vers le projet Xcode
-    path: 'App',
+  webDir: 'out',          // ← pointe vers le dossier d'export statique
+  // PAS de server.url → WebView charge les fichiers locaux (out/)
+  // Mais on autorise la communication avec la PWA
+  server: {
+    allowNavigation: [
+      'app.mycookflex.com',
+      '*.mycookflex.com'
+    ]
   },
-
   plugins: {
     SplashScreen: {
       launchShowDuration: 2000,
       launchAutoHide: true,
       backgroundColor: '#0a0a0a',
+      androidScaleType: 'CENTER_CROP',
       showSpinner: true,
+      androidSpinnerStyle: 'large',
       iosSpinnerStyle: 'small',
       spinnerColor: '#f97316',
     },
     Keyboard: {
-      resize: 'body' as any,
-      style: 'dark' as any,
+      resize: 'body',
+      style: 'dark',
       resizeOnFullScreen: true,
     },
     FirebaseAuthentication: {
       skipNativeAuth: false,
       providers: ['google.com'],
-    },
-    PushNotifications: {
-      presentationOptions: ['badge', 'sound', 'alert'],
     }
   }
 };
