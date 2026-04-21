@@ -1,0 +1,18 @@
+require_relative '../../node_modules/@capacitor/ios/scripts/pods_helpers'
+
+platform :ios, '13.0'
+use_frameworks!
+
+# workaround to avoid Xcode caching of Pods that requires let it not to be the
+# default directory environment variables to parse Pods for multiple apps
+# https://github.com/CocoaPods/CocoaPods/issues/4395
+project 'App.xcodeproj'
+
+target 'App' do
+  capacitor_pods
+  # Add your Pods here
+end
+
+post_install do |installer|
+  assertDeploymentTarget(installer)
+end
