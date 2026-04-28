@@ -6,12 +6,10 @@ node_modules/
 npm-debug.log*
 package-lock.json
 
-# === Xcode ===
+# === Xcode : fichiers temporaires et données utilisateur ===
 xcuserdata/
 *.xcscmblueprint
 *.xccheckout
-App/build/
-App/output/
 DerivedData/
 *.moved-aside
 *.pbxuser
@@ -24,17 +22,18 @@ DerivedData/
 !default.perspectivev3
 *.hmap
 *.ipa
+build/
 
 # === Swift Package Manager ===
 App/CapApp-SPM/.build/
 App/CapApp-SPM/*.resolved
 .swiftpm/
 
-# === CocoaPods (au cas où) ===
-App/Pods/
-App/Podfile.lock
+# === CocoaPods ===
+Pods/
+Podfile.lock
 
-# === Capacitor (auto-généré) ===
+# === Capacitor (auto-généré à chaque sync) ===
 capacitor-cordova-ios-plugins/
 
 # === Secrets Apple (NE JAMAIS COMMITER) ===
@@ -50,6 +49,3 @@ Thumbs.db
 
 # === Logs ===
 *.log
-
-# NE PAS ignorer le dossier public/ (contient les fichiers web compilés)
-!App/App/public/
