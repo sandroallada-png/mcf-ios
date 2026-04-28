@@ -60,8 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         return ApplicationDelegateProxy.shared.application(
             application,
-            continue: userActivity,
-            restorationHandler: restorationHandler
+            continue: userActivity
         )
     }
 
