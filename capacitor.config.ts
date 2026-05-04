@@ -1,5 +1,5 @@
 import { CapacitorConfig } from '@capacitor/cli';
-// MCF iOS LOCAL BUILD — v10s-timeout (2026-05-04)
+// MCF iOS LOCAL BUILD — généré par scripts/prepare-ios.js
 // NE PAS COMMITER CE FICHIER tel quel (il est temporaire)
 
 const config: CapacitorConfig = {
