@@ -5,15 +5,9 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'my.cook.flex',
   appName: 'My Cook Flex',
-  webDir: 'public',  // ← Standard Capacitor : pointe vers un dossier public racine
+  webDir: 'out',          // ← pointe vers le dossier d'export statique
   // PAS de server.url → WebView charge les fichiers locaux (out/)
-  // Mais on autorise la communication avec la PWA
-  server: {
-    allowNavigation: [
-      'app.mycookflex.com',
-      '*.mycookflex.com'
-    ]
-  },
+  // Cela permet de voir les vraies erreurs JS dans la console Xcode / Safari
   plugins: {
     SplashScreen: {
       launchShowDuration: 2000,
