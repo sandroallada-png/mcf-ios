@@ -1,7 +1,13 @@
 {
 	"appId": "my.cook.flex",
 	"appName": "My Cook Flex",
-	"webDir": "dist",
+	"webDir": "public",
+	"server": {
+		"allowNavigation": [
+			"app.mycookflex.com",
+			"*.mycookflex.com"
+		]
+	},
 	"plugins": {
 		"SplashScreen": {
 			"launchShowDuration": 2000,
@@ -26,9 +32,9 @@
 		}
 	},
 	"packageClassList": [
-		"FirebaseAuthenticationPlugin",
 		"AppPlugin",
 		"CAPCameraPlugin",
-		"PushNotificationsPlugin"
+		"PushNotificationsPlugin",
+		"FirebaseAuthenticationPlugin"
 	]
 }
