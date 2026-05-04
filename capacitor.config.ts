@@ -5,7 +5,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'my.cook.flex',
   appName: 'My Cook Flex',
-  webDir: 'public',          // ← Dossier synchronisé pour le build natif
+  webDir: 'public',          // ← Dossier synchronisé pour le build natif (compatible Appflow)
   // PAS de server.url → WebView charge les fichiers locaux (out/)
   // Cela permet de voir les vraies erreurs JS dans la console Xcode / Safari
   plugins: {
